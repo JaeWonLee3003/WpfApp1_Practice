@@ -12,9 +12,9 @@
 
 
         </Grid.ColumnDefinitions>
-        <Label Content="Login Page" HorizontalAlignment="Left" Margin="329,188,0,0" VerticalAlignment="Top" Width="110" FontWeight="Light" FontSize="22"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="321,232,0,0" TextWrapping="Wrap" Text="아이디" VerticalAlignment="Top" Width="126" FontSize="18" TextChanged="TextBox_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" Height="28" Margin="321,265,0,0" TextWrapping="Wrap" Text="비밀번호" VerticalAlignment="Top" Width="126" FontSize="18" TextChanged="TextBox_TextChanged"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="364,306,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label Content="사다리 게임" HorizontalAlignment="Center" Height="37" Margin="0,31,0,0" VerticalAlignment="Top" Width="130" FontSize="22"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="244" Margin="208,130,0,0" VerticalAlignment="Top" Width="10"/>
+        <TextBox  Height="34" Margin="173,96,0,304" TextWrapping="Wrap" Text="내용 입력"  Width="80" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="-2.862,0.752" TextChanged="TextBox_TextChanged_1" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox  Height="34" Margin="173,96,0,304" TextWrapping="Wrap" Text="내용 입력"  Width="80" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="-2.862,0.752" TextChanged="TextBox_TextChanged_1" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
     </Grid>
 </Window>
