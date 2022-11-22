@@ -8,16 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Button x:Name="plus" Content="+" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="81" Click="plus_Click" Margin="25,26,0,0" Grid.Column="1" FontSize="24" FontFamily="Arial Black"/>
-        <Button x:Name="minus" Content="-" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="81" Click="minus_Click" Margin="131,26,0,0" Grid.Column="1" FontSize="24" FontFamily="Arial Black"/>
-        <TextBox x:Name="numbox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="40" Margin="231,26,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="151" TextChanged="TextBox_TextChanged"/>
-        <Border BorderBrush="red" BorderThickness="1" HorizontalAlignment="Center" Height="300" Margin="0,80,0,0" VerticalAlignment="Top" Width="300" Grid.Column="1"/>
-        <Image Grid.ColumnSpan="2" Margin="42,99,0,236" Source="/O.png" Stretch="Fill" Width="64" HorizontalAlignment="Left" RenderTransformOrigin="-3.855,-9.725"/>
-        <Image x:Name="Xicons" Grid.ColumnSpan="2" Margin="131,106,605,229" Source="/X.png" Stretch="Fill" Width="64" Height="99.04"/>
-        <Button Background="White"  Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="250,80,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
 
+
+
+        </Grid.ColumnDefinitions>
+        <Label Content="Login Page" HorizontalAlignment="Left" Margin="329,188,0,0" VerticalAlignment="Top" Width="110" FontWeight="Light" FontSize="22"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="321,232,0,0" TextWrapping="Wrap" Text="아이디" VerticalAlignment="Top" Width="126" FontSize="18" TextChanged="TextBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="321,265,0,0" TextWrapping="Wrap" Text="비밀번호" VerticalAlignment="Top" Width="126" FontSize="18" TextChanged="TextBox_TextChanged"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="364,306,0,0" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 </Window>

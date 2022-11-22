@@ -25,7 +25,7 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        private void plus_Click(object sender, RoutedEventArgs e)
+        /*private void plus_Click(object sender, RoutedEventArgs e)
         {
             int ori = int.Parse(numbox.Text); // "0" string -> int 0
             int target = ori + 1; // 1
@@ -38,18 +38,14 @@ namespace WpfApp1
             //Grid.SetColumn(mytb, 0);
             //mytb.Text = "Hello World";
 
-        }
+        }*/
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void minus_Click(object sender, RoutedEventArgs e)
+  
+        /*private void minus_Click(object sender, RoutedEventArgs e)
         {
             int ori = int.Parse(numbox.Text); // "0" string -> int 0
             int target = ori - 1; // 1
             numbox.Text = target.ToString();
-        }
+        }*/
     }
 }
