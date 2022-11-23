@@ -25,6 +25,21 @@ namespace WpfApp1
             InitializeComponent();
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
         /*private void plus_Click(object sender, RoutedEventArgs e)
         {
             int ori = int.Parse(numbox.Text); // "0" string -> int 0
@@ -40,7 +55,7 @@ namespace WpfApp1
 
         }*/
 
-  
+
         /*private void minus_Click(object sender, RoutedEventArgs e)
         {
             int ori = int.Parse(numbox.Text); // "0" string -> int 0
