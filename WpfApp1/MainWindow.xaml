@@ -5,23 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Ladder Game" Height="550" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
+        
+        <Label x:Name="title" Content="사다리 게임" HorizontalAlignment="Left" Height="38" Margin="344,29,0,0" VerticalAlignment="Top" Width="130" FontSize="22"/>
+        <Border BorderBrush="Black" BorderThickness="1" Height="94" Width="10" HorizontalAlignment="Left" Canvas.Left="35" Canvas.Top="33" Margin="304,160,0,0" VerticalAlignment="Top"/>
+        <TextBox  BorderBrush="black" BorderThickness="1"  Height="34" TextWrapping="Wrap" Text="내용 입력"  Width="80" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="-2.862,0.752" TextChanged="TextBox_TextChanged_1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="269,253,0,147" VerticalAlignment="Top"/>
+        <TextBox  BorderBrush="black" BorderThickness="1" Height="34" TextWrapping="Wrap" Text="내용 입력"  Width="80" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="-2.862,0.752" TextChanged="TextBox_TextChanged_1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Top="274" Margin="269,127,0,273" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button x:Name="StartBtn" Content="Button" HorizontalAlignment="Left" Height="47" Margin="297,355,0,0" VerticalAlignment="Top" Width="95" Click="StartButton"/>
 
-
-
-        </Grid.ColumnDefinitions>
-        <Label Content="사다리 게임" HorizontalAlignment="Center" Height="37" Margin="0,31,0,0" VerticalAlignment="Top" Width="130" FontSize="22"/>
-        <Canvas HorizontalAlignment="Left" Height="308" Margin="258,96,0,0" VerticalAlignment="Top" Width="80">
-            <Border BorderBrush="Black" BorderThickness="1" Height="242" Width="10" HorizontalAlignment="Left" Canvas.Left="35" Canvas.Top="33" VerticalAlignment="Top"/>
-            <TextBox  BorderBrush="black" BorderThickness="1"  Height="34" TextWrapping="Wrap" Text="내용 입력"  Width="80" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="-2.862,0.752" TextChanged="TextBox_TextChanged_1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-            <TextBox  BorderBrush="black" BorderThickness="1" Height="34" TextWrapping="Wrap" Text="내용 입력"  Width="80" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="-2.862,0.752" TextChanged="TextBox_TextChanged_1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Canvas.Top="274"/>
-        </Canvas>
-        <Canvas HorizontalAlignment="Left" Height="308" Margin="458,96,0,0" VerticalAlignment="Top" Width="80">
-            <Border BorderBrush="Black" BorderThickness="1" Height="242" Width="10" HorizontalAlignment="Left" Canvas.Left="35" Canvas.Top="33" VerticalAlignment="Top"/>
-            <TextBox  BorderBrush="black" BorderThickness="1"  Height="34" TextWrapping="Wrap" Text="내용 입력"  Width="80" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="-2.862,0.752" TextChanged="TextBox_TextChanged_1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-            <TextBox  BorderBrush="black" BorderThickness="1" Height="34" TextWrapping="Wrap" Text="내용 입력"  Width="80" FontWeight="Bold" FontFamily="Bahnschrift SemiBold Condensed" RenderTransformOrigin="-2.862,0.752" TextChanged="TextBox_TextChanged_1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Canvas.Top="274"/>
-        </Canvas>
     </Grid>
 </Window>

@@ -15,29 +15,36 @@ using System.Windows.Shapes;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// MainWindow.xaml에 대한 상호 작용 논리
-    /// </summary>
     public partial class MainWindow : Window
     {
+
+
         public MainWindow()
         {
             InitializeComponent();
+
         }
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
-        
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
+        /*private void title(object sender, RoutedEventArgs e)
+        {
+            TitleText titleText = new TitleText();
+        }*/
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void StartButton(object sender, RoutedEventArgs e)
+        {
+            StartBtn startBtn = new StartBtn();
+            MessageBox.Show("Hello World");
         }
 
         /*private void plus_Click(object sender, RoutedEventArgs e)
@@ -64,3 +71,4 @@ namespace WpfApp1
         }*/
     }
 }
+
