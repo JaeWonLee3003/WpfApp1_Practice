@@ -40,11 +40,14 @@ namespace WpfApp1
         {
 
         }
-
-        private void StartButton(object sender, RoutedEventArgs e)
+        private void PlusBtn_Click(object sender, RoutedEventArgs e)
         {
-            StartBtn startBtn = new StartBtn();
-            MessageBox.Show("Hello World");
+            InputBox InputB = new InputBox();
+            InputB.SetBox =+1;
+        }
+        private void StartBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Outbox.Text = Input1.Text;
         }
 
         /*private void plus_Click(object sender, RoutedEventArgs e)

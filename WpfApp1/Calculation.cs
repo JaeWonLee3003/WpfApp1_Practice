@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    internal class Calculation
+    public class Calculation
     {
+
     }
 
     public class PlusBtn
     {
 
+        StartBox startBox = new StartBox();
     }
     public class MinusBtn
     {
