@@ -43,7 +43,12 @@ namespace WpfApp1
         private void PlusBtn_Click(object sender, RoutedEventArgs e)
         {
             InputBox InputB = new InputBox();
-            InputB.SetBox =+1;
+            //InputB.SetBox = int.Parse(NumOutbox.Text);
+            //InputB.SetBox = +1;
+
+            int ori = int.Parse(NumOutbox.Text); // "0" string -> int 0
+            int target = ori + 1; // 1
+            NumOutbox.Text = target.ToString();
         }
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
