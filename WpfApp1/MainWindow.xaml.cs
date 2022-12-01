@@ -55,14 +55,15 @@ namespace WpfApp1
             StartBox SetStartBox = new StartBox();
 
 
-            int TestSB = int.Parse(NumOutbox.Text); // "0" string -> int 0
-
-            
 
 
-            for (int i = 0; i < SetStartBox.SetBoxMAX; i++)
+
+                int TestSB = int.Parse(NumOutbox.Text); // "0" string -> int 0
+
+            for (int i = 0; i <= SetStartBox.SetBoxMAX; i++)
             {
                 int target = TestSB + 1; // 1
+                this.Title = i.ToString();
                 NumOutbox.Text = target.ToString();
             }
         }
