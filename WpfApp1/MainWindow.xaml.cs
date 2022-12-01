@@ -22,9 +22,13 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-
+            init();
         }
 
+        private void init()
+        {
+
+        }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -40,19 +44,27 @@ namespace WpfApp1
         {
 
         }
-        private void PlusBtn_Click(object sender, RoutedEventArgs e)
-        {
-            InputBox InputB = new InputBox();
-            //InputB.SetBox = int.Parse(NumOutbox.Text);
-            //InputB.SetBox = +1;
 
-            int ori = int.Parse(NumOutbox.Text); // "0" string -> int 0
-            int target = ori + 1; // 1
-            NumOutbox.Text = target.ToString();
-        }
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
             Outbox.Text = Input1.Text;
+        }
+
+        private void PlustBtn_Click(object sender, RoutedEventArgs e)
+        {
+            StartBox SetStartBox = new StartBox();
+
+
+            int TestSB = int.Parse(NumOutbox.Text); // "0" string -> int 0
+
+            
+
+
+            for (int i = 0; i < SetStartBox.SetBoxMAX; i++)
+            {
+                int target = TestSB + 1; // 1
+                NumOutbox.Text = target.ToString();
+            }
         }
 
         /*private void plus_Click(object sender, RoutedEventArgs e)
