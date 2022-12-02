@@ -23,8 +23,8 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            init();
 
+            
             NumOutbox.TextChanged += NumOutbox_TextChanged;
 
             TestControl();
@@ -32,7 +32,7 @@ namespace WpfApp1
 
         private void TestControl()
         {
-            Button button = new Button();
+            /*Button button = new Button();
             button.Click += Button_Click;
 
             TextBox textBox = new TextBox();
@@ -40,29 +40,16 @@ namespace WpfApp1
 
             RadioButton radioButton = new RadioButton();
             CheckBox checkBox = new CheckBox();
-            ToggleButton toggleButton = new ToggleButton(); 
-
+            ToggleButton toggleButton = new ToggleButton();
             radioButton.Checked += RadioButton_Checked;
-            radioButton.Unchecked += RadioButton_Unchecked;
+            radioButton.Unchecked += RadioButton_Unchecked;*/
         }
 
-        private void RadioButton_Unchecked(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        
+        /// <summary>
+        /// NumOutBox라는 TextBox 내용이 바뀌는 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NumOutbox_TextChanged(object sender, TextChangedEventArgs e)
         {
             // 시작 Text 박스의 갯수를 인지해주는 클래스 호출 
@@ -78,10 +65,17 @@ namespace WpfApp1
                 {
                     ChangeColumn(result); // 2 이상 5라면 값을 result 할당되며 CangeColumn 메소드를 호출함.
                 }
+                else
+                {
+                    NumOutbox.Text = "2";
+                    MessageBox.Show("숫자를 입력해주세요 \nPlease enter a number \n( Tip : 2 ~ 5 )");
+
+                }
             }
             else
             {
-                // 문자일 떄 
+                // 문자 일 때 경고 창을 띄워준다.
+                MessageBox.Show("숫자를 입력해주세요 \nPlease enter a number");
             }
         }
 
@@ -94,28 +88,9 @@ namespace WpfApp1
         private void ChangeColumn(int count) 
         {
 
-        }
-
-        private void init()
-        {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        /*private void title(object sender, RoutedEventArgs e)
-        {
-            TitleText titleText = new TitleText();
-        }*/
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
+        }   
+    
+        
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
             
@@ -128,35 +103,49 @@ namespace WpfApp1
         /// <param name="e"></param>
         private void PlustBtn_Click(object sender, RoutedEventArgs e)
         {
-            // "112"
+            // "123"
             if (int.TryParse(NumOutbox.Text, out int result))
             {
                 NumOutbox.Text = (result+ 1).ToString();
             }
         }
-
-        /*private void plus_Click(object sender, RoutedEventArgs e)
+        private void MinustBtn_Click(object sender, RoutedEventArgs e)
         {
-            int ori = int.Parse(numbox.Text); // "0" string -> int 0
-            int target = ori + 1; // 1
-            numbox.Text = target.ToString();
-
-
-            //MessageBox.Show("Hello World");
-            //outputTb.Text = mytb.Text;
-            //outputTb.FontSize += 2;
-            //Grid.SetColumn(mytb, 0);
-            //mytb.Text = "Hello World";
-
-        }*/
-
-
-        /*private void minus_Click(object sender, RoutedEventArgs e)
+            // "123"
+            if (int.TryParse(NumOutbox.Text, out int result))
+            {
+                NumOutbox.Text = (result - 1).ToString();
+            }
+        }      
+        // 컬럼과 시작,도착 박스를 한 그룹으로 만들고 그것을 복제하고
+        // 시작 했을 때 만든 컬럼 첫번쨰 부터 랜덤으로 도착 지점으로 간다. ( 중복 안됨)
+        // 
+        private void LadderSet(object sender )
         {
-            int ori = int.Parse(numbox.Text); // "0" string -> int 0
-            int target = ori - 1; // 1
-            numbox.Text = target.ToString();
-        }*/
+            
+            TextBox textBox = new TextBox();
+            textBox.TextChanged += StartBox_TextChanged;
+            textBox.TextChanged += EndBox_TextChanged;
+        }
+        private void StartBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int latterNum = StartInBox.Text.Length;
+            if (latterNum == 0)
+            {
+                MessageBox.Show("비어 있습니다.");
+                StartInBox.Text = "직접 입력";
+            }
+            if (latterNum <= 6)
+            {
+                MessageBox.Show("너무 깁니다. \n5자 이내로 해주세요.");
+                StartInBox.Text = "직접 입력";
+            }
+        }
+
+        private void EndBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
 

@@ -5,13 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Ladder Game" Height="550" Width="800"
+        Title="Ladder Game" Height="550" Width="900"
         WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+        <Image x:Key="Plus" Source="C:\Users\LT_0042\source\repos\WpfApp1\WpfApp1\images\Plus.png" Height="50" Width="50" />
+        <Image x:Key="Minus" Source="C:\Users\LT_0042\source\repos\WpfApp1\WpfApp1\images\Minus.png" Height="50" Width="50"/>
+    </Window.Resources>
     <Grid>
 
-        <Label x:Name="title" Content="사다리 게임" HorizontalAlignment="Left" Height="38" Margin="344,29,0,0" VerticalAlignment="Top" Width="130" FontSize="22"/>
-        <Button x:Name="StartBtn" Content="시작하기" HorizontalAlignment="Left" Height="40" Margin="280,416,0,0" VerticalAlignment="Top" Width="90" Click="StartBtn_Click"/>
-        <TextBox x:Name="NumOutbox" HorizontalAlignment="Left" Height="44" Margin="496,33,0,0" TextWrapping="Wrap" Width="81" VerticalAlignment="Top" FontSize="18" />
-        <Button x:Name="PlustBtn" Content="Button" HorizontalAlignment="Left" Height="44" Margin="595,32,0,0" VerticalAlignment="Top" Width="61" Click="PlustBtn_Click"/>
+        <Label x:Name="title" Content="사다리 게임" HorizontalAlignment="Center" Height="38" Margin="0,33,0,0" VerticalAlignment="Top" Width="130" FontSize="22"/>
+        <Button x:Name="StartBtn" Content="시작하기" HorizontalAlignment="Left" Height="26" Margin="674,67,0,0" VerticalAlignment="Top" Width="80" Click="StartBtn_Click"/>
+        <TextBox x:Name="NumOutbox" HorizontalAlignment="Left" Height="26" Margin="674,30,0,0" TextWrapping="Wrap" Width="80" VerticalAlignment="Top" FontSize="14" BorderBrush="#FF212121" BorderThickness="2,2,2,2" TextChanged="NumOutbox_TextChanged" Text="2" HorizontalContentAlignment="Center" />
+        <Button x:Name="PlustBtn" Content="Add Ladder" HorizontalAlignment="Left" Height="26" Margin="764,31,0,0" VerticalAlignment="Top" Width="80" Click="PlustBtn_Click" BorderThickness="2,2,2,2">
+
+        </Button>
+        <Button x:Name="MinustBtn" Content="Remove Ladder" HorizontalAlignment="Left" Height="26" Margin="764,67,0,0" VerticalAlignment="Top" Width="80" Click="MinustBtn_Click" BorderThickness="2,2,2,2"/>
+        <Grid x:Name="LadderSet" Margin="296,178,590,129" Background="Black" />
+        <TextBox x:Name="StartInBox" HorizontalAlignment="Left" Height="34" Margin="256,144,0,0" TextWrapping="Wrap" Width="94" VerticalAlignment="Top" FontSize="14" BorderBrush="#FF212121" BorderThickness="2,2,2,2" TextChanged="StartBox_TextChanged" Text="직접 입력" HorizontalContentAlignment="Center" Foreground="#FF0C0C0C" />
+        <TextBox x:Name="EndInBox" HorizontalAlignment="Left" Height="34" Margin="256,405,0,0" TextWrapping="Wrap" Width="94" VerticalAlignment="Top" FontSize="14" BorderBrush="#FF212121" BorderThickness="2,2,2,2" TextChanged="EndBox_TextChanged" Text="직접 입력" HorizontalContentAlignment="Center" Foreground="#FF0C0C0C" />
     </Grid>
 </Window>
