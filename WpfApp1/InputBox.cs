@@ -12,6 +12,10 @@ namespace WpfApp1
         StartBox Start = new StartBox();
         EndBox EndBox = new EndBox(); 
     }
+
+    /// <summary>
+    /// 최대 최소
+    /// </summary>
     public class StartBox
     {
         public int SetBoxMAX = 5;
