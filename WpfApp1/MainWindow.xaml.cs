@@ -50,7 +50,7 @@ namespace WpfApp1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void NumOutbox_TextChanged(object sender, TextChangedEventArgs e)
+        public void NumOutbox_TextChanged(object sender, TextChangedEventArgs e)
         {
             // 시작 Text 박스의 갯수를 인지해주는 클래스 호출 
             StartBox startBox = new StartBox();
@@ -87,7 +87,11 @@ namespace WpfApp1
         /// <param name="count">생성할 컬럼의 갯수</param>
         private void ChangeColumn(int count)
         {
+            // Ladder 의 기본 갯수를 선언하고 
+            int ladderNum = count;
+            LadderSet ladder = new LadderSet();
 
+            Ladders.Children.Add(ladderNum);
         }
 
 
@@ -122,7 +126,8 @@ namespace WpfApp1
         {
             LadderSet ladder = new LadderSet();
             // "123"
-            Ladders.Children.Clear();
+            // Ladders.Children.Clear(); 모든 요소 지우기
+            // Ladders.Children.Remove(ladder); 지정된 요소 지우기  
 
             if (int.TryParse(NumOutbox.Text, out int result))
             {
