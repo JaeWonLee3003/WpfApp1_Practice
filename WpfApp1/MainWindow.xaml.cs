@@ -24,7 +24,7 @@ namespace WpfApp1
         {
             InitializeComponent();
 
-            
+
             NumOutbox.TextChanged += NumOutbox_TextChanged;
 
             TestControl();
@@ -54,14 +54,14 @@ namespace WpfApp1
         {
             // 시작 Text 박스의 갯수를 인지해주는 클래스 호출 
             StartBox startBox = new StartBox();
-           // 도착 Text 박스의 갯수를 인지해주는 클래스 호출
+            // 도착 Text 박스의 갯수를 인지해주는 클래스 호출
             EndBox endBox = new EndBox();
 
             // 1. 텍스트가 바뀌면 -> 컬럼이 입력한 갯수만큼 늘어나거나 줄어든다.
             var temp = NumOutbox.Text;
             if (int.TryParse(temp, out int result)) // 입력한 내용이 숫자가 아니라면
             {
-                if(result >= startBox.SetBoxMIN && result <= startBox.SetBoxMAX) // 예외처리 2 이상 5 이하
+                if (result >= startBox.SetBoxMIN && result <= startBox.SetBoxMAX) // 예외처리 2 이상 5 이하
                 {
                     ChangeColumn(result); // 2 이상 5라면 값을 result 할당되며 CangeColumn 메소드를 호출함.
                 }
@@ -85,15 +85,26 @@ namespace WpfApp1
         /// 입력된 갯수 만큼 컬럼을 생성
         /// </summary>
         /// <param name="count">생성할 컬럼의 갯수</param>
-        private void ChangeColumn(int count) 
+        private void ChangeColumn(int count)
         {
 
-        }   
-    
-        
+        }
+
+
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            int latterNum = StartInBox.Text.Length;
+
+            if (latterNum == 0)
+            {
+                MessageBox.Show("비어있습니다.");
+                StartInBox.Text = "직접 입력";
+            }
+            else if (latterNum >= 12)
+            {
+                MessageBox.Show("수가 너무 많습니다.");
+                StartInBox.Text = "직접 입력";
+            }
         }
 
         /// <summary>
@@ -106,7 +117,7 @@ namespace WpfApp1
             // "123"
             if (int.TryParse(NumOutbox.Text, out int result))
             {
-                NumOutbox.Text = (result+ 1).ToString();
+                NumOutbox.Text = (result + 1).ToString();
             }
         }
         private void MinustBtn_Click(object sender, RoutedEventArgs e)
@@ -116,33 +127,33 @@ namespace WpfApp1
             {
                 NumOutbox.Text = (result - 1).ToString();
             }
-        }      
+        }
         // 컬럼과 시작,도착 박스를 한 그룹으로 만들고 그것을 복제하고
         // 시작 했을 때 만든 컬럼 첫번쨰 부터 랜덤으로 도착 지점으로 간다. ( 중복 안됨)
         // 
-        private void LadderSet(object sender )
+        private void LadderSet(object sender)
         {
-            
+
             TextBox textBox = new TextBox();
             textBox.TextChanged += StartBox_TextChanged;
             textBox.TextChanged += EndBox_TextChanged;
         }
         private void StartBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            int latterNum = StartInBox.Text.Length;
-            if (latterNum == 0)
-            {
-                MessageBox.Show("비어 있습니다.");
-                StartInBox.Text = "직접 입력";
-            }
-            if (latterNum <= 6)
-            {
-                MessageBox.Show("너무 깁니다. \n5자 이내로 해주세요.");
-                StartInBox.Text = "직접 입력";
-            }
+            
         }
 
         private void EndBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void InputBk_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void InputBk2_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
