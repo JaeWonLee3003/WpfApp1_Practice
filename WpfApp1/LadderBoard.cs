@@ -14,7 +14,7 @@ namespace WpfApp1
 
     public class RowLD
     {
-        
+        List<int> rows = new List<int>(); 
     }
 
     public class ColumnLD

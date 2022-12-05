@@ -63,6 +63,7 @@ namespace WpfApp1
             {
                 if (result >= startBox.SetBoxMIN && result <= startBox.SetBoxMAX) // 예외처리 2 이상 5 이하
                 {
+
                     ChangeColumn(result); // 2 이상 5라면 값을 result 할당되며 CangeColumn 메소드를 호출함.
                 }
                 else
@@ -78,30 +79,35 @@ namespace WpfApp1
                 MessageBox.Show("숫자를 입력해주세요 \nPlease enter a number");
             }
         }
-
-
-
         /// <summary>
         /// 입력된 갯수 만큼 컬럼을 생성
         /// </summary>
         /// <param name="count">생성할 컬럼의 갯수</param>
         private void ChangeColumn(int count)
         {
-            // Ladder 의 기본 갯수를 선언하고 
-            int ladderNum = count;
-            LadderSet ladder = new LadderSet();
+            /*for (int i = 0; i <= count; i++)
+            {
+                 Console.WriteLine(i); 들어간 숫자만큼 잘 작동하고 있음 
+                 count == result 수 만큼 Ladder 가 있어야함 반복 해서 추가하면 중첩이 되면서 쌓임
+                 쌓이지 않게 변수를 만들어서 유지 해줘야하는데 방법을 모름.
+                 ex : int LadderSetNum = count; Ladder의 갯수는 count와 같다 하고 
+                LadderSet ladder = new LadderSet();
 
-            Ladders.Children.Add(ladderNum);
+                Ladders.Children.Add(ladder); 말고 ladder를 count 만큼 Add 한다면
+                제거 했을 때의 갯수도 내려가기에 따라 제거 될 것이다. Add , Remove , Clear 될까?
+
+            }*/
+
         }
 
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+
 
             //Ladders.Children
 
-            
+
         }
 
         /// <summary>
@@ -109,17 +115,29 @@ namespace WpfApp1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void PlustBtn_Click(object sender, RoutedEventArgs e)
+        private void PlustBtn_Click(object sender, RoutedEventArgs e) // 몇 개 만들지 정했음
         {
 
-            LadderSet ladder = new LadderSet();
+            int x;
 
-            Ladders.Children.Add(ladder); // 클릭 할 때 Ladder 를 추가 
+            if (!int.TryParse(NumOutbox.Text, out x))
+            {
+                return;
+            };
+
+            Ladders.Children.Clear();
+            for (int i = 0; i < x; i++)
+            {
+                LadderSet ladder = new LadderSet();
+                Ladders.Children.Add(ladder); // 클릭 할 때 Ladder 를 추가 
+            }
+
+
 
             // "123"
             if (int.TryParse(NumOutbox.Text, out int result))
             {
-                NumOutbox.Text = (result + 1).ToString();
+               // NumOutbox.Text = (result + 1).ToString();
             }
         }
         private void MinustBtn_Click(object sender, RoutedEventArgs e)
@@ -131,7 +149,9 @@ namespace WpfApp1
 
             if (int.TryParse(NumOutbox.Text, out int result))
             {
-                NumOutbox.Text = (result - 1).ToString();
+                NumOutbox.Text = (result = 2).ToString();
+               
+                Ladders.Children.Clear(); // 클릭 할 때 Ladder 를 추가
             }
         }
         // 컬럼과 시작,도착 박스를 한 그룹으로 만들고 그것을 복제하고

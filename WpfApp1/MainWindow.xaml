@@ -16,8 +16,8 @@
         <Label x:Name="title" Content="사다리 게임" HorizontalAlignment="Center" Height="38" Margin="0,33,0,0" VerticalAlignment="Top" Width="130" FontSize="22"/>
         <Button x:Name="StartBtn" Content="시작하기" HorizontalAlignment="Left" Height="26" Margin="674,67,0,0" VerticalAlignment="Top" Width="80" Click="StartBtn_Click"/>
         <TextBox x:Name="NumOutbox" HorizontalAlignment="Left" Height="26" Margin="674,30,0,0" TextWrapping="Wrap" Width="80" VerticalAlignment="Top" FontSize="14" BorderBrush="#FF212121" BorderThickness="2,2,2,2" TextChanged="NumOutbox_TextChanged" Text="2" HorizontalContentAlignment="Center" />
-        <Button x:Name="PlustBtn" Content="Add Ladder" HorizontalAlignment="Left" Height="26" Margin="764,31,0,0" VerticalAlignment="Top" Width="80" Click="PlustBtn_Click" BorderThickness="2,2,2,2"></Button>
-        <Button x:Name="MinustBtn" Content="Remove Ladder" HorizontalAlignment="Left" Height="26" Margin="764,67,0,0" VerticalAlignment="Top" Width="80" Click="MinustBtn_Click" BorderThickness="2,2,2,2"/>
+        <Button x:Name="PlustBtn" Content="Set Ladder" HorizontalAlignment="Left" Height="26" Margin="764,31,0,0" VerticalAlignment="Top" Width="80" Click="PlustBtn_Click" BorderThickness="2,2,2,2"></Button>
+        <Button x:Name="MinustBtn" Content="Clear Ladder" HorizontalAlignment="Left" Height="26" Margin="764,67,0,0" VerticalAlignment="Top" Width="80" Click="MinustBtn_Click" BorderThickness="2,2,2,2"/>
         <UniformGrid x:Name="Ladders" HorizontalAlignment="Center" VerticalAlignment="Center" Rows="1"/>
 
     </Grid>

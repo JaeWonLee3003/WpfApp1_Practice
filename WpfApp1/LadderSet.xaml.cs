@@ -28,21 +28,7 @@ namespace WpfApp1
         private void StartBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
-            int latterNum = StartInBox.Text.Length;
-
-            if (latterNum == 0)
-            {
-                MessageBox.Show("비어있습니다.");
-                StartInBox.Text = "직접 입력";
-            }
-            else if (latterNum >= 12)
-            {
-                MessageBox.Show("수가 너무 많습니다.");
-                StartInBox.Text = "직접 입력";
-
-
-
-            }
+            
         }
 
         private void EndBox_TextChanged(object sender, TextChangedEventArgs e)
