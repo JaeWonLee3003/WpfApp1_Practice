@@ -14,7 +14,7 @@ namespace WpfApp1
 
     public class RowLD
     {
-        List<int> rows = new List<int>(); 
+       public List<int> rows = new List<int>(); // x 만큼 -1 만큼 담기 x/3*2/2 
     }
 
     public class ColumnLD

@@ -130,6 +130,9 @@ namespace WpfApp1
             {
                 LadderSet ladder = new LadderSet();
                 Ladders.Children.Add(ladder); // 클릭 할 때 Ladder 를 추가 
+                RowLD rowLD = new RowLD();
+                rowLD.rows.Add(x);
+
             }
 
 
@@ -137,7 +140,7 @@ namespace WpfApp1
             // "123"
             if (int.TryParse(NumOutbox.Text, out int result))
             {
-               // NumOutbox.Text = (result + 1).ToString();
+                // NumOutbox.Text = (result + 1).ToString();
             }
         }
         private void MinustBtn_Click(object sender, RoutedEventArgs e)
@@ -150,7 +153,7 @@ namespace WpfApp1
             if (int.TryParse(NumOutbox.Text, out int result))
             {
                 NumOutbox.Text = (result = 2).ToString();
-               
+
                 Ladders.Children.Clear(); // 클릭 할 때 Ladder 를 추가
             }
         }
