@@ -93,18 +93,11 @@ namespace WpfApp1
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            int latterNum = StartInBox.Text.Length;
+            
 
-            if (latterNum == 0)
-            {
-                MessageBox.Show("비어있습니다.");
-                StartInBox.Text = "직접 입력";
-            }
-            else if (latterNum >= 12)
-            {
-                MessageBox.Show("수가 너무 많습니다.");
-                StartInBox.Text = "직접 입력";
-            }
+            //Ladders.Children
+
+            
         }
 
         /// <summary>
@@ -114,6 +107,11 @@ namespace WpfApp1
         /// <param name="e"></param>
         private void PlustBtn_Click(object sender, RoutedEventArgs e)
         {
+
+            LadderSet ladder = new LadderSet();
+
+            Ladders.Children.Add(ladder); // 클릭 할 때 Ladder 를 추가 
+
             // "123"
             if (int.TryParse(NumOutbox.Text, out int result))
             {
@@ -122,7 +120,10 @@ namespace WpfApp1
         }
         private void MinustBtn_Click(object sender, RoutedEventArgs e)
         {
+            LadderSet ladder = new LadderSet();
             // "123"
+            Ladders.Children.Clear();
+
             if (int.TryParse(NumOutbox.Text, out int result))
             {
                 NumOutbox.Text = (result - 1).ToString();
@@ -131,32 +132,7 @@ namespace WpfApp1
         // 컬럼과 시작,도착 박스를 한 그룹으로 만들고 그것을 복제하고
         // 시작 했을 때 만든 컬럼 첫번쨰 부터 랜덤으로 도착 지점으로 간다. ( 중복 안됨)
         // 
-        private void LadderSet(object sender)
-        {
 
-            TextBox textBox = new TextBox();
-            textBox.TextChanged += StartBox_TextChanged;
-            textBox.TextChanged += EndBox_TextChanged;
-        }
-        private void StartBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
-
-        private void EndBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void InputBk_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void InputBk2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
 

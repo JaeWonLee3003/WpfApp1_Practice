@@ -18,10 +18,7 @@
         <TextBox x:Name="NumOutbox" HorizontalAlignment="Left" Height="26" Margin="674,30,0,0" TextWrapping="Wrap" Width="80" VerticalAlignment="Top" FontSize="14" BorderBrush="#FF212121" BorderThickness="2,2,2,2" TextChanged="NumOutbox_TextChanged" Text="2" HorizontalContentAlignment="Center" />
         <Button x:Name="PlustBtn" Content="Add Ladder" HorizontalAlignment="Left" Height="26" Margin="764,31,0,0" VerticalAlignment="Top" Width="80" Click="PlustBtn_Click" BorderThickness="2,2,2,2"></Button>
         <Button x:Name="MinustBtn" Content="Remove Ladder" HorizontalAlignment="Left" Height="26" Margin="764,67,0,0" VerticalAlignment="Top" Width="80" Click="MinustBtn_Click" BorderThickness="2,2,2,2"/>
-        <Grid Margin="296,178,590,129" Background="Black" />
-        <TextBox x:Name="StartInBox" HorizontalAlignment="Left" Height="34" Margin="256,144,0,0" TextWrapping="Wrap" Width="94" VerticalAlignment="Top" FontSize="14" BorderBrush="#FF212121" BorderThickness="2,2,2,2" TextChanged="StartBox_TextChanged" Text="직접 입력" HorizontalContentAlignment="Center" Foreground="#FF0C0C0C" />
-        <TextBox x:Name="EndInBox" HorizontalAlignment="Left" Height="34" Margin="256,405,0,0" TextWrapping="Wrap" Width="94" VerticalAlignment="Top" FontSize="14" BorderBrush="#FF212121" BorderThickness="2,2,2,2" TextChanged="EndBox_TextChanged" Text="직접 입력" HorizontalContentAlignment="Center" Foreground="#FF0C0C0C" />
-        <TextBox x:Name="InputBk" HorizontalAlignment="Left" Height="34" Margin="377,144,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="90" TextChanged="InputBk_TextChanged"/>
-        <TextBox x:Name="InputBkk" HorizontalAlignment="Left" Height="38" Margin="377,101,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="90" TextChanged="InputBk2_TextChanged"/>
+        <UniformGrid x:Name="Ladders" HorizontalAlignment="Center" VerticalAlignment="Center" Rows="1"/>
+
     </Grid>
 </Window>

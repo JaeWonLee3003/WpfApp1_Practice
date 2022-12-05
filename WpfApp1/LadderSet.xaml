@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="WpfApp1.LadderSet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" Margin="4,0,4,0" 
+             >
+    <StackPanel>
+        <TextBox x:Name="StartInBox" Height="34" TextWrapping="Wrap" Width="94" FontSize="14" BorderBrush="#FF212121" BorderThickness="2,2,2,2" TextChanged="StartBox_TextChanged" Text="직접 입력" HorizontalContentAlignment="Center" Foreground="#FF0C0C0C" />
+        <Border Background="Black" Height="156" Width="14" />
+        <TextBox x:Name="EndInBox" Height="34" TextWrapping="Wrap" Width="94" FontSize="14" BorderBrush="#FF212121" BorderThickness="2,2,2,2" TextChanged="EndBox_TextChanged" Text="직접 입력" HorizontalContentAlignment="Center" Foreground="#FF0C0C0C" />
+
+    </StackPanel>
+</UserControl>
