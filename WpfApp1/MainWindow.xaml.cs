@@ -125,15 +125,18 @@ namespace WpfApp1
                 return;
             };
 
+            RowLD rowLD = new RowLD();
+            rowLD.rows.Add(x);
+            Console.WriteLine(rowLD.rows);
+
             Ladders.Children.Clear();
             for (int i = 0; i < x; i++)
             {
                 LadderSet ladder = new LadderSet();
                 Ladders.Children.Add(ladder); // 클릭 할 때 Ladder 를 추가 
-                RowLD rowLD = new RowLD();
-                rowLD.rows.Add(x);
 
             }
+
 
 
 
@@ -149,6 +152,10 @@ namespace WpfApp1
             // "123"
             // Ladders.Children.Clear(); 모든 요소 지우기
             // Ladders.Children.Remove(ladder); 지정된 요소 지우기  
+
+            RowLD rowLD = new RowLD();
+            rowLD.rows.Clear();
+            Console.WriteLine(rowLD.rows);
 
             if (int.TryParse(NumOutbox.Text, out int result))
             {
