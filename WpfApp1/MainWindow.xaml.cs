@@ -99,21 +99,12 @@ namespace WpfApp1
             }*/
 
         }
-
-      
-
-       
-               
-       
-
-
-
         /// <summary>
         /// 클릭을 하면 숫자가 1이 늘어나고 컬럼이 한개 추가됨
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void PlustBtn_Click(object sender, RoutedEventArgs e) // 몇 개 만들지 정했음
+        private void SetBtn_Click(object sender, RoutedEventArgs e) // 몇 개 만들지 정했음
         {
 
             int x;
@@ -121,11 +112,21 @@ namespace WpfApp1
             if (!int.TryParse(NumOutbox.Text, out x))
             {
                 return;
-            };
+            }
+                 
+            RowLadder rowLD = new RowLadder();
 
-            RowLD rowLD = new RowLD();
-            rowLD.rows.Add(x);
-            Console.WriteLine(rowLD.rows);
+            rowLD.rowWrap = x-1; // 만들어질 가로 범위 컬럼은 입력 받은 x 의 -1 ex ) 2개를 입력받는다면 1개를 만들어준다.
+            // 몇 개 만들지는 이제 됐으니까.
+            // 리스트에서 0 , 1, 2, 3, 4, 5,  까지 어디서 사다리가 나올지
+            // 상수  3이 들어간 rowLine 변수를 List 안에 Random 으로 넣는다.
+            // 들어간 배열을 활성화? 시켜줌으로서 보이게한다? 그 배열 위치에 Add? 생성해준다. 
+
+            rowLD.rowNum.Insert(0, "6");
+
+
+            //rowLD.rows.Add();
+            //Console.WriteLine(rowLD.rows);
 
             Ladders.Children.Clear();
             for (int i = 0; i < x; i++)
@@ -141,7 +142,10 @@ namespace WpfApp1
                 // NumOutbox.Text = (result + 1).ToString();
             }
         }
-        private void MinustBtn_Click(object sender, RoutedEventArgs e)
+
+ 
+
+        private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
             LadderSet ladder = new LadderSet();
 
@@ -149,9 +153,11 @@ namespace WpfApp1
             // Ladders.Children.Clear(); 모든 요소 지우기
             // Ladders.Children.Remove(ladder); 지정된 요소 지우기  
 
-            RowLD rowLD = new RowLD();
-            rowLD.rows.Clear();
-            Console.WriteLine(rowLD.rows);
+            RowLadder rowLD = new RowLadder();
+
+            rowLD.rowNum.Clear();
+
+            Console.WriteLine(rowLD.rowNum);
 
             if (int.TryParse(NumOutbox.Text, out int result))
             {
@@ -163,7 +169,7 @@ namespace WpfApp1
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("스타트");
+            
         }
 
         // 컬럼과 시작,도착 박스를 한 그룹으로 만들고 그것을 복제하고

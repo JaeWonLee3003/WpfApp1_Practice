@@ -16,9 +16,15 @@
         <Label x:Name="title" Content="사다리 게임" HorizontalAlignment="Center" Height="38" Margin="0,33,0,0" VerticalAlignment="Top" Width="130" FontSize="22"/>
         <Button x:Name="StartBtn" Content="시작하기" HorizontalAlignment="Left" Height="26" Margin="674,67,0,0" VerticalAlignment="Top" Width="80" Click="StartBtn_Click"/>
         <TextBox x:Name="NumOutbox" HorizontalAlignment="Left" Height="26" Margin="674,30,0,0" TextWrapping="Wrap" Width="80" VerticalAlignment="Top" FontSize="14" BorderBrush="#FF212121" BorderThickness="2,2,2,2" TextChanged="NumOutbox_TextChanged" Text="2" HorizontalContentAlignment="Center" />
-        <Button x:Name="PlustBtn" Content="Set Ladder" HorizontalAlignment="Left" Height="26" Margin="764,31,0,0" VerticalAlignment="Top" Width="80" Click="PlustBtn_Click" BorderThickness="2,2,2,2"></Button>
-        <Button x:Name="MinustBtn" Content="Clear Ladder" HorizontalAlignment="Left" Height="26" Margin="764,67,0,0" VerticalAlignment="Top" Width="80" Click="MinustBtn_Click" BorderThickness="2,2,2,2"/>
+        <Button x:Name="PlustBtn" Content="Set Ladder" HorizontalAlignment="Left" Height="26" Margin="764,31,0,0" VerticalAlignment="Top" Width="80" Click="SetBtn_Click" BorderThickness="2,2,2,2"></Button>
+        <Button x:Name="MinustBtn" Content="Clear Ladder" HorizontalAlignment="Left" Height="26" Margin="764,67,0,0" VerticalAlignment="Top" Width="80" Click="RemoveBtn_Click" BorderThickness="2,2,2,2"/>
         <UniformGrid x:Name="Ladders" HorizontalAlignment="Center" VerticalAlignment="Center" Rows="1"/>
+        <local:LadderSet HorizontalAlignment="Left" Margin="400,113,0,0" VerticalAlignment="Top"/>
+        <local:LadderSet HorizontalAlignment="Left" Margin="300,113,0,0" VerticalAlignment="Top"/>
+        <StackPanel Background="#FFBEFFE0" Margin="354,147,460,231" RenderTransformOrigin="0.495,-1.008">
+
+        </StackPanel>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="12" Margin="340,180,0,0" VerticalAlignment="Top" Width="114" Background="Black"/>
 
     </Grid>
 </Window>
