@@ -30,6 +30,8 @@ namespace WpfApp1
             TestControl();
         }
 
+        
+
         private void TestControl()
         {
             /*Button button = new Button();
@@ -122,8 +124,19 @@ namespace WpfApp1
             // 상수  3이 들어간 rowLine 변수를 List 안에 Random 으로 넣는다.
             // 들어간 배열을 활성화? 시켜줌으로서 보이게한다? 그 배열 위치에 Add? 생성해준다. 
 
-            rowLD.rowNum.Insert(0, "6");
+            for (int i = 0; i < rowLD.rowLine; i++)
+            {
+                // 이 안에서는 라인 3개를 만들어주는 내용이 들어가야한다.
+                // 1. 배열 몇번째 인지 0~5 까지 랜덤 메서드를 만들어준다.
+                // 2. 무엇`을 삽입을 할 것인지. 무엇을 삽입할 것이냐
+                // 가로를 표현 시켜줄 Border를 해당 배열 위치에 Add 해줄 것이다.
+                //rowLD.rowNum.Insert();
 
+                Random randomObj = new Random();
+
+                Console.WriteLine(randomObj.Next());
+
+            } 
 
             //rowLD.rows.Add();
             //Console.WriteLine(rowLD.rows);

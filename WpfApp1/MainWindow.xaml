@@ -24,7 +24,7 @@
         <StackPanel Background="#FFBEFFE0" Margin="354,147,460,231" RenderTransformOrigin="0.495,-1.008">
 
         </StackPanel>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="12" Margin="340,180,0,0" VerticalAlignment="Top" Width="114" Background="Black"/>
+        <Border x:Name="rowBar" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="12" Margin="340,180,0,0" VerticalAlignment="Top" Width="114" Background="Black"/>
 
     </Grid>
 </Window>
