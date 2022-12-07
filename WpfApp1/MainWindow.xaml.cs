@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -71,14 +72,14 @@ namespace WpfApp1
                 else
                 {
                     NumOutbox.Text = "2";
-                    MessageBox.Show("숫자를 입력해주세요 \nPlease enter a number \n( Tip : 2 ~ 5 )");
+                    System.Windows.MessageBox.Show("숫자를 입력해주세요 \nPlease enter a number \n( Tip : 2 ~ 5 )");
 
                 }
             }
             else
             {
                 // 문자 일 때 경고 창을 띄워준다.
-                MessageBox.Show("숫자를 입력해주세요 \nPlease enter a number");
+                System.Windows.MessageBox.Show("숫자를 입력해주세요 \nPlease enter a number");
             }
         }
         /// <summary>
@@ -108,67 +109,111 @@ namespace WpfApp1
         /// <param name="e"></param>
         private void SetBtn_Click(object sender, RoutedEventArgs e) // 몇 개 만들지 정했음
         {
+            GenerateAll();
+        }
 
+        private void GenerateAll()
+        {
             int x;
 
             if (!int.TryParse(NumOutbox.Text, out x))
             {
                 return;
             }
-                 
+
+
+
             RowLadder rowLD = new RowLadder();
 
-            rowLD.rowWrap = x-1; // 만들어질 가로 범위 컬럼은 입력 받은 x 의 -1 ex ) 2개를 입력받는다면 1개를 만들어준다.
+            rowLD.rowWrap = x - 1; // 만들어질 가로 범위 컬럼은 입력 받은 x 의 -1 ex ) 2개를 입력받는다면 1개를 만들어준다.
             // 몇 개 만들지는 이제 됐으니까.
             // 리스트에서 0 , 1, 2, 3, 4, 5,  까지 어디서 사다리가 나올지
             // 상수  3이 들어간 rowLine 변수를 List 안에 Random 으로 넣는다.
             // 들어간 배열을 활성화? 시켜줌으로서 보이게한다? 그 배열 위치에 Add? 생성해준다. 
 
+            rowLD.Init();
+            
+
+/*
             for (int i = 0; i < rowLD.rowLine; i++)
             {
                 // 이 안에서는 라인 3개를 만들어주는 내용이 들어가야한다.
                 // 1. 배열 몇번째 인지 0~5 까지 랜덤 메서드를 만들어준다.
                 // 2. 무엇`을 삽입을 할 것인지. 무엇을 삽입할 것이냐
                 // 가로를 표현 시켜줄 Border를 해당 배열 위치에 Add 해줄 것이다.
-                //rowLD.rowNum.Insert();
+
 
                 Random randomObj = new Random();
 
-                Console.WriteLine(randomObj.Next());
+                Console.WriteLine(randomObj.Next(rowLD.rowRanNum));
 
-            } 
+                // 2042734590 같은 문자가 3번 반복 됨. 
 
+            }
+*/
             //rowLD.rows.Add();
             //Console.WriteLine(rowLD.rows);
 
             Ladders.Children.Clear();
+            RowsPanel.Children.Clear();
             for (int i = 0; i < x; i++)
             {
-                LadderSet ladder = new LadderSet();
-                Ladders.Children.Add(ladder); // 클릭 할 때 Ladder 를 추가
+                ColumnSet ColumnL = new ColumnSet();
+                Ladders.Children.Add(ColumnL); // 클릭 할 때 Ladder 를 추가
+            }
+            switch (x)
+            {
+                case 2:
+                    RowsPanel.Margin = new Thickness(220, 150, 220, 0);
+                    break;
+                case 3:
+                    RowsPanel.Margin = new Thickness(140, 150, 140, 0);
+                    break;
+                case 4:
+                    RowsPanel.Margin = new Thickness(110, 150, 110, 0);
+                    break;
+                case 5:
+                    RowsPanel.Margin = new Thickness(90, 150, 90, 0);
+                    break;
+
+            } // x 값을 받아 만드는 
+            
+            for (int i = 0; i < rowLD.rowWrap; i++)
+            {
+                StackPanel panel = new StackPanel();
+                foreach(int y in rowLD.allSet[i])
+                {
+                    Border border = new Border();
+                    border.BorderBrush = Brushes.Black;
+                    border.Height = y;
+                    border.BorderThickness = new Thickness(0, 0, 0, 5);
+                    panel.Children.Add(border);
+                }
+                RowsPanel.Children.Add(panel);
+                
             }
 
 
-            // "123"
-            if (int.TryParse(NumOutbox.Text, out int result))
+                // "123"
+                if (int.TryParse(NumOutbox.Text, out int result))
             {
                 // NumOutbox.Text = (result + 1).ToString();
             }
         }
 
- 
 
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         {
-            LadderSet ladder = new LadderSet();
+            ColumnSet ladder = new ColumnSet();
 
             // "123"
             // Ladders.Children.Clear(); 모든 요소 지우기
-            // Ladders.Children.Remove(ladder); 지정된 요소 지우기  
+            // Ladders.Children.Remove(ladder); 지정된 요소 지    우기  
 
             RowLadder rowLD = new RowLadder();
 
             rowLD.rowNum.Clear();
+            RowsPanel.Children.Clear();
 
             Console.WriteLine(rowLD.rowNum);
 

@@ -18,9 +18,9 @@ namespace WpfApp1
     /// <summary>
     /// LadderSet.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class LadderSet : UserControl
+    public partial class ColumnSet : UserControl
     {
-        public LadderSet()
+        public ColumnSet()
         {
             InitializeComponent();
         }
