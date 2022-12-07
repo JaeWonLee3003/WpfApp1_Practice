@@ -24,13 +24,30 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-
+        
         private void StartBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            EmptyStartText();
 
-            
         }
 
+        public void EmptyStartTex()
+        {
+            if (StartInBox.Text.Length == 0)
+            {
+                MessageBox.Show("비어 있는 텍스트가 있습니다.");
+            }
+            if (StartInBox.Text.Length > 12)
+            {
+
+                MessageBox.Show("텍스트가 너무 긴 것이 있습니다.");
+            }
+        }
+
+        public static void EmptyStartText()
+        {
+            
+        }
         private void EndBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 

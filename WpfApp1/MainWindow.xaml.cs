@@ -25,7 +25,7 @@ namespace WpfApp1
             InitializeComponent();
 
 
-            NumOutbox.TextChanged += NumOutbox_TextChanged;
+            //NumOutbox.TextChanged += NumOutbox_TextChanged;
 
             TestControl();
         }
@@ -100,15 +100,13 @@ namespace WpfApp1
 
         }
 
+      
 
-        private void StartBtn_Click(object sender, RoutedEventArgs e)
-        {
+       
+               
+       
 
 
-            //Ladders.Children
-
-
-        }
 
         /// <summary>
         /// 클릭을 하면 숫자가 1이 늘어나고 컬럼이 한개 추가됨
@@ -133,11 +131,8 @@ namespace WpfApp1
             for (int i = 0; i < x; i++)
             {
                 LadderSet ladder = new LadderSet();
-                Ladders.Children.Add(ladder); // 클릭 할 때 Ladder 를 추가 
-
+                Ladders.Children.Add(ladder); // 클릭 할 때 Ladder 를 추가
             }
-
-
 
 
             // "123"
@@ -149,6 +144,7 @@ namespace WpfApp1
         private void MinustBtn_Click(object sender, RoutedEventArgs e)
         {
             LadderSet ladder = new LadderSet();
+
             // "123"
             // Ladders.Children.Clear(); 모든 요소 지우기
             // Ladders.Children.Remove(ladder); 지정된 요소 지우기  
@@ -164,6 +160,12 @@ namespace WpfApp1
                 Ladders.Children.Clear(); // 클릭 할 때 Ladder 를 추가
             }
         }
+
+        private void StartBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("스타트");
+        }
+
         // 컬럼과 시작,도착 박스를 한 그룹으로 만들고 그것을 복제하고
         // 시작 했을 때 만든 컬럼 첫번쨰 부터 랜덤으로 도착 지점으로 간다. ( 중복 안됨)
         // 
