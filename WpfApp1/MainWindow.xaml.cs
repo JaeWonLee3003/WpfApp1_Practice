@@ -25,7 +25,6 @@ namespace WpfApp1
         {
             InitializeComponent();
 
-
         }
         /// <summary>
         /// NumOutBox라는 TextBox 내용이 바뀌는 이벤트
@@ -78,7 +77,7 @@ namespace WpfApp1
                 return;
             }
 
-            RowLadder RowLadder = new RowLadder(); // rowLD 클래스를 호출
+            RowLadder RowLadder = new RowLadder(); // RowLadder 클래스를 호출
 
             RowLadder.rowWrap = x - 1;
 
@@ -111,21 +110,6 @@ namespace WpfApp1
             }
             // x 값을 받아 Column 수 별로 margin 값을 다르게 하였다. 
 
-            MakeRowLadder();
-            
-            // "123"
-            if (int.TryParse(NumOutbox.Text, out int result))
-            {
-                // NumOutbox.Text = (result + 1).ToString();
-            }
-        }
-
-        /// <summary>
-        /// 가로 사다리를 만들어주는 메서드
-        /// </summary>
-        private void MakeRowLadder()
-        {
-            RowLadder RowLadder = new RowLadder(); // RowLadder 클래스를 호출
             for (int i = 0; i < RowLadder.rowWrap; i++) // rowWrap 수 만큼 범위를 만들어준다.
             {
 
@@ -140,8 +124,13 @@ namespace WpfApp1
                 }
                 RowsPanel.Children.Add(panel); //  사다리 만들어주기                
             }
-        }
 
+            // "123"
+            if (int.TryParse(NumOutbox.Text, out int result))
+            {
+                // NumOutbox.Text = (result + 1).ToString();
+            }
+        }   
         /// <summary>
         /// 전에 생성되어있었던 사다리 요소들을 지워주는 메서드 
         /// </summary>
@@ -154,17 +143,11 @@ namespace WpfApp1
         private void RemoveBtn_Click(object sender, RoutedEventArgs e)
         // 모든 사타리들을 지워주는 이벤트 버튼이다.
         {
-            ColumnSet ladder = new ColumnSet();
-
             // Ladders.Children.Clear(); 모든 요소 지우기
             // Ladders.Children.Remove(ladder); 지정된 요소 지우기  
 
             RowLadder RowLadder = new RowLadder();
-
-            RowLadder.rowNum.Clear(); //
             RowsPanel.Children.Clear();
-
-            Console.WriteLine(RowLadder.rowNum);
 
             if (int.TryParse(NumOutbox.Text, out int result))
             {

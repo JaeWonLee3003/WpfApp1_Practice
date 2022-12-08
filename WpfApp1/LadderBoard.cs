@@ -1,5 +1,6 @@
 ﻿using DotLiquid.Tags;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
@@ -13,18 +14,14 @@ namespace WpfApp1
     public class RowLadder
     {
 
-        public int rowWrap = 0; // 전체적으로 큰 사다리 영역임. x - 1 / ex : 사다리 컬럼이 2개면 사다리 영역은 1개
+        public int rowWrap = 0; // 전체적으로 큰 사다리 영역임. x - 1 
         public int rowLine = 3; //상수로 무조건 가로 사다리의 줄은 3줄로 설정
-        public int rowRanNum = 50;                              // 문제는 3개를 다 똑같이 일직선으로 놓을 것인지가 문제
-                                      // 이런 문제 때문애 List를 사용하라고 했던 것 같음.
+        public int rowRanNum = 50;  // 랜덤 Max 값 50 + 5                           
+                
+        public List<List<int>> allSet; 
+        Random r = new Random(); // 랜덤 클래스 호출 
 
-
-
-        public List<int> rowNum = new List<int>(); // 정수형으로 List 생성
-        public List<List<int>> allSet;
-        Random r = new Random();
-
-        internal void Init()
+        internal void Init() 
         {
             allSet = new List<List<int>>();
             for(int i = 0; i < rowWrap; i++)
@@ -41,9 +38,16 @@ namespace WpfApp1
 
     public class DataToken
     {
-
-
-
         
+        public int PositionX,PositionY;
+
+        ArrayList LadderIndex = new ArrayList();
+        
+        
+
+
+        // LadderIndex.Add("x");
+
+
     }
 }
