@@ -42,10 +42,6 @@ namespace WpfApp1
         }
     }
 
-    public class ColumnLD
-    {
-
-    }
     public class DataToken
     {
 

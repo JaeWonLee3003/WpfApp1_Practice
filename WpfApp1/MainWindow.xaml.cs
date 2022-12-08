@@ -67,7 +67,8 @@ namespace WpfApp1
                 if (result >= startBox.SetBoxMIN && result <= startBox.SetBoxMAX) // 예외처리 2 이상 5 이하
                 {
 
-                    ChangeColumn(result); // 2 이상 5라면 값을 result 할당되며 CangeColumn 메소드를 호출함.
+                   // ChangeColumn(result); 
+                   // 2 이상 5라면 값을 result 할당되며 CangeColumn 메소드를 호출함.
                 }
                 else
                 {
@@ -125,13 +126,13 @@ namespace WpfApp1
 
             RowLadder rowLD = new RowLadder();
 
-            rowLD.rowWrap = x - 1; // 만들어질 가로 범위 컬럼은 입력 받은 x 의 -1 ex ) 2개를 입력받는다면 1개를 만들어준다.
-            // 몇 개 만들지는 이제 됐으니까.
+            rowLD.rowWrap = x - 1;
+            // 만들어질 가로 범위 컬럼은 입력 받은 x 의 -1 ex ) 2개를 입력받는다면 1개를 만들어준다.
             // 리스트에서 0 , 1, 2, 3, 4, 5,  까지 어디서 사다리가 나올지
             // 상수  3이 들어간 rowLine 변수를 List 안에 Random 으로 넣는다.
             // 들어간 배열을 활성화? 시켜줌으로서 보이게한다? 그 배열 위치에 Add? 생성해준다. 
 
-            rowLD.Init();
+           
             
 
 /*
@@ -151,9 +152,6 @@ namespace WpfApp1
 
             }
 */
-            //rowLD.rows.Add();
-            //Console.WriteLine(rowLD.rows);
-
             Ladders.Children.Clear();
             RowsPanel.Children.Clear();
             for (int i = 0; i < x; i++)
@@ -176,7 +174,8 @@ namespace WpfApp1
                     RowsPanel.Margin = new Thickness(90, 150, 90, 0);
                     break;
 
-            } // x 값을 받아 만드는 
+            } 
+            // x 값을 받아 Column 수 별로 margin 값을 다르게 하였다. 
             
             for (int i = 0; i < rowLD.rowWrap; i++)
             {
@@ -192,8 +191,6 @@ namespace WpfApp1
                 RowsPanel.Children.Add(panel);
                 
             }
-
-
                 // "123"
                 if (int.TryParse(NumOutbox.Text, out int result))
             {
@@ -227,13 +224,10 @@ namespace WpfApp1
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            RowLadder rowLD = new RowLadder();
+            rowLD.Init();
         }
-
         // 컬럼과 시작,도착 박스를 한 그룹으로 만들고 그것을 복제하고
         // 시작 했을 때 만든 컬럼 첫번쨰 부터 랜덤으로 도착 지점으로 간다. ( 중복 안됨)
-        // 
-
-    }
+     }
 }
-
