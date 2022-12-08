@@ -8,10 +8,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    public class LadderBoard
-    {
-
-    }
+    
 
     public class RowLadder
     {
@@ -45,5 +42,8 @@ namespace WpfApp1
     public class DataToken
     {
 
+
+
+        
     }
 }
