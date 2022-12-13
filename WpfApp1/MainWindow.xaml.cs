@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Console;
 
 namespace WpfApp1
 {
@@ -70,16 +72,16 @@ namespace WpfApp1
         }
         private void GenerateAll()
         {
-            int x; // 사다리 컬럼의 수
+            int colCount; // 사다리 컬럼의 수
 
-            if (!int.TryParse(NumOutbox.Text, out x)) // x 값을 받았다먼 실행
+            if (!int.TryParse(NumOutbox.Text, out colCount)) // x 값을 받았다먼 실행
             {
                 return;
             }
 
             RowLadder RowLadder = new RowLadder(); // RowLadder 클래스를 호출
 
-            RowLadder.rowWrap = x - 1;
+            RowLadder.ListWrap = colCount - 1;
 
             // 만들어질 가로 범위 컬럼은 입력 받은 x 의 -1 ex ) 2개를 입력받는다면 1개를 만들어준다.
 
@@ -87,12 +89,12 @@ namespace WpfApp1
 
             LadderClear();
 
-            for (int i = 0; i < x; i++)
+            for (int i = 0; i < colCount; i++)
             {
                 ColumnSet ColumnL = new ColumnSet();
-                Ladders.Children.Add(ColumnL); // 클릭 할 때 Ladder 를 추가
+                Ladders.Children.Add(ColumnL); // Ladder 를 추가
             }
-            switch (x)
+            switch (colCount)
             {
                 case 2:
                     RowsPanel.Margin = new Thickness(220, 150, 220, 0);
@@ -109,28 +111,90 @@ namespace WpfApp1
 
             }
             // x 값을 받아 Column 수 별로 margin 값을 다르게 하였다. 
+            // 반응형 기능으로 계산하여 짜야함.
 
-            for (int i = 0; i < RowLadder.rowWrap; i++) // rowWrap 수 만큼 범위를 만들어준다.
+
+
+
+
+            for (int i = 0; i < RowLadder.ListWrap; i++) // rowWrap 수 만큼 범위를 만들어준다.
             {
 
+                //stringMake(ref RowLadder.rowWrap);
+
                 StackPanel panel = new StackPanel(); // 페널 생성자
-                foreach (int y in RowLadder.allSet[i]) // y 안에 allset 리스트의 i 만큼 넣어준다.
+
+                listMake(ref RowLadder.ListWrap);
+                
+
+                foreach (int y in RowLadder.allSet[i]) // y 안에 allset 리스트의 난수 i 만큼 넣어준다.
                 {
                     Border border = new Border(); // 보더 생성자
                     border.BorderBrush = Brushes.Black; // 보더의 색은 검정
+
+                    //  이 때 Height를 랜덤으로 뽑고 랜덤수를 List에 담아줌
+
                     border.Height = y; // 보더의 높이 크기는 y 만큼
+
+                    int postY = y;
+                    y1Make(ref postY);
+
+
+
+                    // list 
+
+
+                    // 만들 영역의 갯 수의 따라서 사다리 리스트 별로 데이터가 들어간다.
+
+
+
+
                     border.BorderThickness = new Thickness(0, 0, 0, 5); // 보더의 높이 크기 
                     panel.Children.Add(border); // 보더를 패널의 자식으로 생성한다.
-                }
-                RowsPanel.Children.Add(panel); //  사다리 만들어주기                
-            }
 
-            // "123"
-            if (int.TryParse(NumOutbox.Text, out int result))
-            {
-                // NumOutbox.Text = (result + 1).ToString();
+                }
+                RowsPanel.Children.Add(panel); //  사다리 만들어주기
+
             }
-        }   
+        }
+
+        public void listMake(ref int ListNum)
+        {
+            if (ListNum == 1)
+            {
+                 void y1Make(ref int i, y)
+                {
+
+                }
+                List<int> y1 = new List<int>();
+                
+            }
+            else if (ListNum == 2)
+            {
+                List<int> y1 = new List<int>();
+                List<int> y2 = new List<int>();
+            }
+            else if (ListNum == 3)
+            {
+                List<int> y1 = new List<int>();
+                List<int> y2 = new List<int>();
+                List<int> y3 = new List<int>();
+            }
+            else if (ListNum == 4)
+            {
+                List<int> y1 = new List<int>();
+                List<int> y2 = new List<int>();
+                List<int> y3 = new List<int>();
+                List<int> y4 = new List<int>();
+            }
+        }
+
+
+
+
+
+
+
         /// <summary>
         /// 전에 생성되어있었던 사다리 요소들을 지워주는 메서드 
         /// </summary>
@@ -156,10 +220,17 @@ namespace WpfApp1
                 Ladders.Children.Clear(); // 클릭 할 때 Ladder 를 추가
             }
         }
-        private void StartBtn_Click(object sender, RoutedEventArgs e)
         // 시작 버튼을 눌렀을 때의 이벤트 버튼이다.
+        private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
+            // DataToken 알고리즘 
 
+            // 표현 방법 해당 사다리 보더의 색을 바꿔 보이게 한다.
+
+            /*for(int i = 0; i < Start 했을 때의 ; i++)
+            {
+
+            }*/
         }
     }
 }
