@@ -137,7 +137,8 @@ namespace WpfApp1
                     border.Height = y; // 보더의 높이 크기는 y 만큼
 
                     int postY = y;
-                    y1Make(ref postY);
+                    
+
 
 
 
@@ -162,10 +163,6 @@ namespace WpfApp1
         {
             if (ListNum == 1)
             {
-                 void y1Make(ref int i, y)
-                {
-
-                }
                 List<int> y1 = new List<int>();
                 
             }
